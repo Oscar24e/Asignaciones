@@ -56,33 +56,8 @@
 									<td>Asignacion</td>
 									<td>Archivo</td>
 									<td>Inserte numero de Asigancion</td>
-
 								</tr>
-								<?php
-								$dbhost = "localhost";
-								$dbuser = "root";
-								$dbpass = "";
-								$dbname = "testbd";
-								$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-								if (!$conn) {
-
-									die("No hay conexion: " . mysqli_connect_error());
-								}
-								$sql = "SELECT * FROM tareas1";
-								$result = mysqli_query($conn, $sql);
-								while ($mostrar = mysqli_fetch_array($result)) {
-								?>
-									<tr>
-										<td><input type="submit" value="Enviar" name="entregar" ></td>
-										<td><?php echo $mostrar['ID'] ?></td>
-										<td><?php echo $mostrar['ASIGNACION'] ?></td>
-										<td><input type="file" name="Archivo" id="material"></td>
-										<td><input type="text" name="txteliminar" id=""></td>
-									</tr>
-								<?php
-								}
-								?>
+								
 							</table>
 
 						</div>
@@ -110,14 +85,4 @@
 	<script src="assets/js/main.js"></script>
 
 </body>
-<script>
-	$("#ent").click(function() {
-		Swal.fire(
-			'¡Buen trabajo!',
-			'Tu tarea fue entregada!',
-			'success'
-		)
-	});
-</script>
-
 </html>
